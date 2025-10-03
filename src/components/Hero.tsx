@@ -45,7 +45,7 @@ const Hero = () => {
             <div className="grid grid-cols-1 xs:grid-cols-3 gap-3 xs:gap-4 md:gap-6 text-center">
               <div className="p-2 xs:p-3 md:p-4">
                 <div className="text-xl xs:text-2xl md:text-3xl font-bold text-grass-600 mb-1 xs:mb-2">
-                  98%
+                  95%
                 </div>
                 <div className="text-gray-600 text-xs xs:text-sm md:text-base leading-tight">
                   {t("hero.accuracyRate")}
@@ -61,7 +61,7 @@ const Hero = () => {
               </div>
               <div className="p-2 xs:p-3 md:p-4">
                 <div className="text-xl xs:text-2xl md:text-3xl font-bold text-grass-600 mb-1 xs:mb-2">
-                  15+
+                  10+
                 </div>
                 <div className="text-gray-600 text-xs xs:text-sm md:text-base leading-tight">
                   {t("hero.cropTypesSupported")}
