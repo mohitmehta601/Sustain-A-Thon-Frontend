@@ -19,6 +19,7 @@ import {
 } from "lucide-react";
 import { mlApiService, ModelInfo } from "@/services/mlApiService";
 import { useToast } from "@/hooks/use-toast";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const MLModelStatus = () => {
   const [modelInfo, setModelInfo] = useState<ModelInfo | null>(null);
@@ -26,34 +27,35 @@ const MLModelStatus = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [lastChecked, setLastChecked] = useState<Date | null>(null);
   const { toast } = useToast();
+  const { t } = useLanguage();
 
   // Define all 11 crop types - all using consistent green theme
   const cropTypes = [
-    { name: "Tea", color: "bg-green-100 text-green-800" },
-    { name: "Cotton", color: "bg-green-100 text-green-800" },
-    { name: "Maize", color: "bg-green-100 text-green-800" },
-    { name: "Groundnut", color: "bg-green-100 text-green-800" },
-    { name: "Pulses", color: "bg-green-100 text-green-800" },
-    { name: "Millets", color: "bg-green-100 text-green-800" },
-    { name: "Rice", color: "bg-green-100 text-green-800" },
-    { name: "Soybean", color: "bg-green-100 text-green-800" },
-    { name: "Sugarcane", color: "bg-green-100 text-green-800" },
-    { name: "Wheat", color: "bg-green-100 text-green-800" },
-    { name: "Coffee", color: "bg-green-100 text-green-800" },
+    { name: t("crops.tea"), color: "bg-green-100 text-green-800" },
+    { name: t("crops.cotton"), color: "bg-green-100 text-green-800" },
+    { name: t("crops.maize"), color: "bg-green-100 text-green-800" },
+    { name: t("crops.groundnut"), color: "bg-green-100 text-green-800" },
+    { name: t("crops.pulses"), color: "bg-green-100 text-green-800" },
+    { name: t("crops.millets"), color: "bg-green-100 text-green-800" },
+    { name: t("crops.rice"), color: "bg-green-100 text-green-800" },
+    { name: t("crops.soybean"), color: "bg-green-100 text-green-800" },
+    { name: t("crops.sugarcane"), color: "bg-green-100 text-green-800" },
+    { name: t("crops.wheat"), color: "bg-green-100 text-green-800" },
+    { name: t("crops.coffee"), color: "bg-green-100 text-green-800" },
   ];
 
   // Define all 10 soil types - all using consistent green theme
   const soilTypes = [
-    { name: "Sandy", color: "bg-green-100 text-green-800" },
-    { name: "Silty", color: "bg-green-100 text-green-800" },
-    { name: "Laterite", color: "bg-green-100 text-green-800" },
-    { name: "Alkaline", color: "bg-green-100 text-green-800" },
-    { name: "Black", color: "bg-green-100 text-green-800" },
-    { name: "Clayey", color: "bg-green-100 text-green-800" },
-    { name: "Saline", color: "bg-green-100 text-green-800" },
-    { name: "Loamy", color: "bg-green-100 text-green-800" },
-    { name: "Red", color: "bg-green-100 text-green-800" },
-    { name: "Peaty", color: "bg-green-100 text-green-800" },
+    { name: t("soils.sandy"), color: "bg-green-100 text-green-800" },
+    { name: t("soils.silty"), color: "bg-green-100 text-green-800" },
+    { name: t("soils.laterite"), color: "bg-green-100 text-green-800" },
+    { name: t("soils.alkaline"), color: "bg-green-100 text-green-800" },
+    { name: t("soils.black"), color: "bg-green-100 text-green-800" },
+    { name: t("soils.clayey"), color: "bg-green-100 text-green-800" },
+    { name: t("soils.saline"), color: "bg-green-100 text-green-800" },
+    { name: t("soils.loamy"), color: "bg-green-100 text-green-800" },
+    { name: t("soils.red"), color: "bg-green-100 text-green-800" },
+    { name: t("soils.peaty"), color: "bg-green-100 text-green-800" },
   ];
 
   const checkModelStatus = async () => {
@@ -83,9 +85,8 @@ const MLModelStatus = () => {
       setIsConnected(false);
       setModelInfo(null);
       toast({
-        title: "ML Model Status",
-        description:
-          "Unable to connect to ML model. Using fallback predictions.",
+        title: t("mlModel.title"),
+        description: t("mlModel.fallbackDescription"),
         variant: "destructive",
       });
     } finally {
@@ -105,10 +106,10 @@ const MLModelStatus = () => {
       <CardHeader className="px-4 sm:px-6">
         <CardTitle className="flex items-center space-x-2 text-lg sm:text-xl">
           <Brain className="h-5 w-5 text-purple-600" />
-          <span>ML Model Status</span>
+          <span>{t("mlModel.title")}</span>
         </CardTitle>
         <CardDescription className="text-sm sm:text-base">
-          Real-time status of the machine learning prediction model
+          {t("mlModel.description")}
         </CardDescription>
       </CardHeader>
       <CardContent className="px-4 sm:px-6">
@@ -122,7 +123,7 @@ const MLModelStatus = () => {
                 <XCircle className="h-5 w-5 text-red-600" />
               )}
               <span className="font-medium">
-                {isConnected ? "Connected" : "Disconnected"}
+                {isConnected ? t("mlModel.connected") : t("mlModel.disconnected")}
               </span>
             </div>
             <Button
@@ -135,7 +136,7 @@ const MLModelStatus = () => {
               <RefreshCw
                 className={`h-4 w-4 ${isLoading ? "animate-spin" : ""}`}
               />
-              <span>Refresh</span>
+              <span>{t("mlModel.refresh")}</span>
             </Button>
           </div>
 
@@ -147,13 +148,13 @@ const MLModelStatus = () => {
                 <div className="flex items-center space-x-2">
                   <Wheat className="h-3 w-3 text-green-600" />
                   <span className="font-medium text-sm">
-                    Supported Crop Types
+                    {t("mlModel.supportedCropTypes")}
                   </span>
                   <Badge
                     variant="secondary"
                     className="bg-red-500 text-white text-xs"
                   >
-                    {cropTypes.length} Types
+                    {cropTypes.length} {t("mlModel.types")}
                   </Badge>
                 </div>
                 <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-1">
@@ -174,13 +175,13 @@ const MLModelStatus = () => {
                 <div className="flex items-center space-x-2">
                   <Mountain className="h-3 w-3 text-green-600" />
                   <span className="font-medium text-sm">
-                    Supported Soil Types
+                    {t("mlModel.supportedSoilTypes")}
                   </span>
                   <Badge
                     variant="secondary"
                     className="bg-red-500 text-white text-xs"
                   >
-                    {soilTypes.length} Types
+                    {soilTypes.length} {t("mlModel.types")}
                   </Badge>
                 </div>
                 <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 gap-1">
@@ -201,14 +202,14 @@ const MLModelStatus = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <div className="flex justify-between">
-                      <span className="text-sm text-gray-600">Model Type:</span>
+                      <span className="text-sm text-gray-600">{t("mlModel.modelType")}:</span>
                       <Badge variant="secondary">
-                        {modelInfo.model_type || "Unknown"}
+                        {modelInfo.model_type || t("mlModel.unknown")}
                       </Badge>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-sm text-gray-600">
-                        Total Features:
+                        {t("mlModel.totalFeatures")}:
                       </span>
                       <Badge
                         variant="secondary"
@@ -221,14 +222,14 @@ const MLModelStatus = () => {
 
                   <div className="space-y-2">
                     <div className="flex justify-between">
-                      <span className="text-sm text-gray-600">Targets:</span>
+                      <span className="text-sm text-gray-600">{t("mlModel.targets")}:</span>
                       <span className="text-sm font-medium">
                         {modelInfo.targets?.length || 0}
                       </span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-sm text-gray-600">
-                        Label Encoders:
+                        {t("mlModel.labelEncoders")}:
                       </span>
                       <span className="text-sm font-medium">
                         {Object.keys(modelInfo.label_encoders || {}).length}
@@ -246,11 +247,10 @@ const MLModelStatus = () => {
               <AlertTriangle className="h-5 w-5 text-yellow-600 mt-0.5" />
               <div>
                 <p className="text-sm font-medium text-yellow-800">
-                  Using Fallback Predictions
+                  {t("mlModel.usingFallback")}
                 </p>
                 <p className="text-xs text-yellow-700 mt-1">
-                  The ML model is unavailable. Predictions are using rule-based
-                  algorithms with reduced accuracy.
+                  {t("mlModel.fallbackDescription")}
                 </p>
               </div>
             </div>
@@ -260,7 +260,7 @@ const MLModelStatus = () => {
           {lastChecked && (
             <div className="text-xs text-gray-500 flex items-center space-x-2">
               <div className="w-2 h-2 bg-gray-400 rounded-full"></div>
-              <span>Last checked: {lastChecked.toLocaleTimeString()}</span>
+              <span>{t("mlModel.lastChecked")}: {lastChecked.toLocaleTimeString()}</span>
             </div>
           )}
         </div>

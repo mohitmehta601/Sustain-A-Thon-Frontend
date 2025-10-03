@@ -164,25 +164,25 @@ const Dashboard = () => {
 
     const mlPrediction = await predictFertilizer(mlInput);
 
-    const phStatus = pH < 6.0 ? "Acidic" : pH > 7.5 ? "Alkaline" : "Optimal";
+    const phStatus = pH < 6.0 ? t("soilStatus.acidic") : pH > 7.5 ? t("soilStatus.alkaline") : t("soilStatus.optimal");
     const moistureStatus =
-      moisture < 40 ? "Low" : moisture > 80 ? "High" : "Optimal";
+      moisture < 40 ? t("soilStatus.low") : moisture > 80 ? t("soilStatus.high") : t("soilStatus.optimal");
 
     const nutrientDeficiency = [];
-    if (nitrogen < 30) nutrientDeficiency.push("Nitrogen");
-    if (phosphorus < 15) nutrientDeficiency.push("Phosphorus");
-    if (potassium < 120) nutrientDeficiency.push("Potassium");
+    if (nitrogen < 30) nutrientDeficiency.push(t("nutrients.nitrogen"));
+    if (phosphorus < 15) nutrientDeficiency.push(t("nutrients.phosphorus"));
+    if (potassium < 120) nutrientDeficiency.push(t("nutrients.potassium"));
 
     const cropName =
       Object.keys(CROP_TYPES).find(
         (key) =>
           CROP_TYPES[key as keyof typeof CROP_TYPES] === parseInt(data.cropType)
-      ) || "Unknown";
+      ) || t("mlModel.unknown");
     const soilName =
       Object.keys(SOIL_TYPES).find(
         (key) =>
           SOIL_TYPES[key as keyof typeof SOIL_TYPES] === parseInt(data.soilType)
-      ) || "Unknown";
+      ) || t("mlModel.unknown");
 
     const primaryFertilizerInfo =
       FERTILIZER_INFO[mlPrediction.fertilizer as keyof typeof FERTILIZER_INFO];
@@ -195,31 +195,30 @@ const Dashboard = () => {
         : `ML model recommends this fertilizer for ${cropName} in ${soilName} soil`,
       applicationMethod: primaryFertilizerInfo
         ? primaryFertilizerInfo.application
-        : "Apply as per standard agricultural practices",
+        : t("fertilizer.standardApplication"),
     };
 
     let secondaryFertilizer;
-    if (nutrientDeficiency.includes("Phosphorus")) {
+    if (nutrientDeficiency.includes(t("nutrients.phosphorus"))) {
       secondaryFertilizer = {
-        name: "DAP",
+        name: t("fertilizer.dap"),
         amount: `${Math.round(50 * hectares)} kg`,
-        reason: "Addresses phosphorus deficiency identified in soil analysis",
-        applicationMethod: "Apply as basal dose during soil preparation",
+        reason: t("fertilizer.phosphorusDeficiency"),
+        applicationMethod: t("fertilizer.basalDose"),
       };
-    } else if (nutrientDeficiency.includes("Potassium")) {
+    } else if (nutrientDeficiency.includes(t("nutrients.potassium"))) {
       secondaryFertilizer = {
-        name: "Potassium sulfate",
+        name: t("fertilizer.potassiumSulfate"),
         amount: `${Math.round(40 * hectares)} kg`,
-        reason: "Addresses potassium deficiency for better fruit quality",
-        applicationMethod: "Apply during fruit development stage",
+        reason: t("fertilizer.potassiumDeficiency"),
+        applicationMethod: t("fertilizer.fruitDevelopment"),
       };
     } else {
       secondaryFertilizer = {
-        name: "Organic Compost",
+        name: t("fertilizer.organicCompost"),
         amount: `${Math.round(1000 * hectares)} kg`,
-        reason: "Improves soil structure and provides slow-release nutrients",
-        applicationMethod:
-          "Apply 2-3 weeks before planting and incorporate into soil",
+        reason: t("fertilizer.improvesStructure"),
+        applicationMethod: t("fertilizer.incorporateSoil"),
       };
     }
 

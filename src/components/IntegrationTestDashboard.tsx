@@ -26,6 +26,7 @@ import {
 import { integratedMLService } from "@/services/integratedMLService";
 import { mlApiService } from "@/services/mlApiService";
 import { LocationSoilService } from "@/services/locationSoilService";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface TestResult {
   name: string;
@@ -42,12 +43,13 @@ const IntegrationTestDashboard: React.FC = () => {
     "idle" | "testing" | "success" | "failed"
   >("idle");
   const [backendUrl, setBackendUrl] = useState("");
+  const { t } = useLanguage();
 
   const initialTests: TestResult[] = [
     {
-      name: "Backend Health Check",
+      name: t("integration.backendHealth"),
       status: "pending",
-      message: "Checking if backend is accessible...",
+      message: t("integration.checkingBackend"),
     },
     {
       name: "ML Model Status",

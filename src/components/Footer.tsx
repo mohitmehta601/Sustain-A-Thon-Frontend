@@ -104,7 +104,7 @@ const Footer = () => {
               to="/integration-test"
               className="text-xs text-gray-500 hover:text-gray-300 transition-colors"
             >
-              Backend Integration Status
+              {t("footer.backendStatus")}
             </Link>
           </div>
         </div>

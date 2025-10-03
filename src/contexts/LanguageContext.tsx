@@ -303,6 +303,103 @@ const translations = {
     // Recommendations Page
     "recommendations.title": "Fertilizer Recommendations",
     "recommendations.subtitle": "AI-powered recommendations for your field",
+
+    // ML Model Status
+    "mlModel.title": "ML Model Status",
+    "mlModel.description": "Real-time status of the machine learning prediction model",
+    "mlModel.connected": "Connected",
+    "mlModel.disconnected": "Disconnected",
+    "mlModel.refresh": "Refresh",
+    "mlModel.supportedCropTypes": "Supported Crop Types",
+    "mlModel.supportedSoilTypes": "Supported Soil Types",
+    "mlModel.types": "Types",
+    "mlModel.modelType": "Model Type",
+    "mlModel.totalFeatures": "Total Features",
+    "mlModel.targets": "Targets",
+    "mlModel.labelEncoders": "Label Encoders",
+    "mlModel.unknown": "Unknown",
+    "mlModel.usingFallback": "Using Fallback Predictions",
+    "mlModel.fallbackDescription": "The ML model is unavailable. Predictions are using rule-based algorithms with reduced accuracy.",
+    "mlModel.lastChecked": "Last checked",
+
+    // Crop Types
+    "crops.tea": "Tea",
+    "crops.cotton": "Cotton",
+    "crops.maize": "Maize",
+    "crops.groundnut": "Groundnut",
+    "crops.pulses": "Pulses",
+    "crops.millets": "Millets",
+    "crops.rice": "Rice",
+    "crops.soybean": "Soybean",
+    "crops.sugarcane": "Sugarcane",
+    "crops.wheat": "Wheat",
+    "crops.coffee": "Coffee",
+
+    // Soil Types
+    "soils.sandy": "Sandy",
+    "soils.silty": "Silty",
+    "soils.laterite": "Laterite",
+    "soils.alkaline": "Alkaline",
+    "soils.black": "Black",
+    "soils.clayey": "Clayey",
+    "soils.saline": "Saline",
+    "soils.loamy": "Loamy",
+    "soils.red": "Red",
+    "soils.peaty": "Peaty",
+
+    // Soil Analysis Status
+    "soilStatus.acidic": "Acidic",
+    "soilStatus.alkaline": "Alkaline",
+    "soilStatus.optimal": "Optimal",
+    "soilStatus.low": "Low",
+    "soilStatus.high": "High",
+
+    // Nutrients
+    "nutrients.nitrogen": "Nitrogen",
+    "nutrients.phosphorus": "Phosphorus",
+    "nutrients.potassium": "Potassium",
+
+    // Fertilizer Application
+    "fertilizer.standardApplication": "Apply as per standard agricultural practices",
+    "fertilizer.phosphorusDeficiency": "Addresses phosphorus deficiency identified in soil analysis",
+    "fertilizer.basalDose": "Apply as basal dose during soil preparation",
+    "fertilizer.potassiumDeficiency": "Addresses potassium deficiency for better fruit quality",
+    "fertilizer.fruitDevelopment": "Apply during fruit development stage",
+    "fertilizer.organicCompost": "Organic Compost",
+    "fertilizer.improvesStructure": "Improves soil structure and provides slow-release nutrients",
+    "fertilizer.incorporateSoil": "Apply 2-3 weeks before planting and incorporate into soil",
+    "fertilizer.potassiumSulfate": "Potassium sulfate",
+    "fertilizer.dap": "DAP",
+
+    // Farm
+    "farm.unknownFarm": "Unknown Farm",
+
+    // Integration Tests
+    "integration.backendHealth": "Backend Health Check",
+    "integration.mlModelStatus": "ML Model Status",
+    "integration.basicPrediction": "Basic Prediction Test",
+    "integration.enhancedPrediction": "Enhanced Prediction Test",
+    "integration.llmEnhanced": "LLM Enhanced Test",
+    "integration.locationServices": "Location Services Test",
+    "integration.soilData": "Soil Data Integration",
+    "integration.checkingBackend": "Checking if backend is accessible...",
+    "integration.verifyingML": "Verifying ML model availability...",
+    "integration.testingBasic": "Testing basic fertilizer prediction...",
+    "integration.testingEnhanced": "Testing enhanced prediction with all outputs...",
+    "integration.testingLLM": "Testing LLM-enhanced recommendations...",
+    "integration.testingLocation": "Testing location-based features...",
+    "integration.testingSoilData": "Testing soil data integration...",
+
+    // Signup Form
+    "signup.productId": "Product ID",
+    "signup.enterProductId": "Enter your product ID",
+    "signup.enterFullName": "Enter your full name",
+    "signup.enterEmail": "farmer@example.com",
+    "signup.createPassword": "Create a password",
+    "signup.confirmPassword": "Confirm your password",
+
+    // Footer
+    "footer.backendStatus": "Backend Integration Status",
   },
   hi: {
     // Navigation
@@ -582,6 +679,103 @@ const translations = {
       "उफ्फ! जिस पृष्ठ को आप खोज रहे हैं वह मौजूद नहीं है या स्थानांतरित कर दिया गया है।",
     "notFound.goBack": "वापस जाएं",
     "notFound.returnHome": "होम पर वापस जाएं",
+
+    // ML Model Status
+    "mlModel.title": "एमएल मॉडल स्थिति",
+    "mlModel.description": "मशीन लर्निंग भविष्यवाणी मॉडल की रीयल-टाइम स्थिति",
+    "mlModel.connected": "जुड़ा हुआ",
+    "mlModel.disconnected": "डिस्कनेक्ट",
+    "mlModel.refresh": "रिफ्रेश करें",
+    "mlModel.supportedCropTypes": "समर्थित फसल प्रकार",
+    "mlModel.supportedSoilTypes": "समर्थित मिट्टी प्रकार",
+    "mlModel.types": "प्रकार",
+    "mlModel.modelType": "मॉडल प्रकार",
+    "mlModel.totalFeatures": "कुल फीचर्स",
+    "mlModel.targets": "लक्ष्य",
+    "mlModel.labelEncoders": "लेबल एनकोडर",
+    "mlModel.unknown": "अज्ञात",
+    "mlModel.usingFallback": "फॉलबैक भविष्यवाणियों का उपयोग",
+    "mlModel.fallbackDescription": "एमएल मॉडल उपलब्ध नहीं है। भविष्यवाणियां कम सटीकता के साथ नियम-आधारित एल्गोरिदम का उपयोग कर रही हैं।",
+    "mlModel.lastChecked": "अंतिम जांच",
+
+    // Crop Types
+    "crops.tea": "चाय",
+    "crops.cotton": "कपास",
+    "crops.maize": "मक्का",
+    "crops.groundnut": "मूंगफली",
+    "crops.pulses": "दालें",
+    "crops.millets": "बाजरा",
+    "crops.rice": "चावल",
+    "crops.soybean": "सोयाबीन",
+    "crops.sugarcane": "गन्ना",
+    "crops.wheat": "गेहूं",
+    "crops.coffee": "कॉफी",
+
+    // Soil Types
+    "soils.sandy": "रेतीली",
+    "soils.silty": "गाद",
+    "soils.laterite": "लैटेराइट",
+    "soils.alkaline": "क्षारीय",
+    "soils.black": "काली",
+    "soils.clayey": "चिकनी",
+    "soils.saline": "लवणीय",
+    "soils.loamy": "दोमट",
+    "soils.red": "लाल",
+    "soils.peaty": "पीट",
+
+    // Soil Analysis Status
+    "soilStatus.acidic": "अम्लीय",
+    "soilStatus.alkaline": "क्षारीय",
+    "soilStatus.optimal": "इष्टतम",
+    "soilStatus.low": "कम",
+    "soilStatus.high": "उच्च",
+
+    // Nutrients
+    "nutrients.nitrogen": "नाइट्रोजन",
+    "nutrients.phosphorus": "फास्फोरस",
+    "nutrients.potassium": "पोटैशियम",
+
+    // Fertilizer Application
+    "fertilizer.standardApplication": "मानक कृषि प्रथाओं के अनुसार लागू करें",
+    "fertilizer.phosphorusDeficiency": "मिट्टी विश्लेषण में पहचानी गई फास्फोरस की कमी को दूर करता है",
+    "fertilizer.basalDose": "मिट्टी तैयारी के दौरान बेसल खुराक के रूप में लागू करें",
+    "fertilizer.potassiumDeficiency": "बेहतर फल गुणवत्ता के लिए पोटैशियम की कमी को दूर करता है",
+    "fertilizer.fruitDevelopment": "फल विकास चरण के दौरान लागू करें",
+    "fertilizer.organicCompost": "जैविक खाद",
+    "fertilizer.improvesStructure": "मिट्टी की संरचना में सुधार करता है और धीमी गति से निकलने वाले पोषक तत्व प्रदान करता है",
+    "fertilizer.incorporateSoil": "रोपण से 2-3 सप्ताह पहले लागू करें और मिट्टी में मिलाएं",
+    "fertilizer.potassiumSulfate": "पोटैशियम सल्फेट",
+    "fertilizer.dap": "डीएपी",
+
+    // Farm
+    "farm.unknownFarm": "अज्ञात खेत",
+
+    // Integration Tests
+    "integration.backendHealth": "बैकएंड स्वास्थ्य जांच",
+    "integration.mlModelStatus": "एमएल मॉडल स्थिति",
+    "integration.basicPrediction": "बुनियादी भविष्यवाणी परीक्षण",
+    "integration.enhancedPrediction": "उन्नत भविष्यवाणी परीक्षण",
+    "integration.llmEnhanced": "एलएलएम उन्नत परीक्षण",
+    "integration.locationServices": "स्थान सेवा परीक्षण",
+    "integration.soilData": "मिट्टी डेटा एकीकरण",
+    "integration.checkingBackend": "जांच रहे हैं कि बैकएंड सुलभ है...",
+    "integration.verifyingML": "एमएल मॉडल उपलब्धता सत्यापित कर रहे हैं...",
+    "integration.testingBasic": "बुनियादी उर्वरक भविष्यवाणी का परीक्षण...",
+    "integration.testingEnhanced": "सभी आउटपुट के साथ उन्नत भविष्यवाणी का परीक्षण...",
+    "integration.testingLLM": "एलएलएम-उन्नत सिफारिशों का परीक्षण...",
+    "integration.testingLocation": "स्थान-आधारित सुविधाओं का परीक्षण...",
+    "integration.testingSoilData": "मिट्टी डेटा एकीकरण का परीक्षण...",
+
+    // Signup Form
+    "signup.productId": "उत्पाद आईडी",
+    "signup.enterProductId": "अपना उत्पाद आईडी दर्ज करें",
+    "signup.enterFullName": "अपना पूरा नाम दर्ज करें",
+    "signup.enterEmail": "farmer@example.com",
+    "signup.createPassword": "पासवर्ड बनाएं",
+    "signup.confirmPassword": "अपना पासवर्ड पुष्टि करें",
+
+    // Footer
+    "footer.backendStatus": "बैकएंड एकीकरण स्थिति",
   },
   pa: {
     // Navigation
@@ -860,6 +1054,103 @@ const translations = {
       "ਉਫ਼! ਜਿਸ ਪੰਨੇ ਨੂੰ ਤੁਸੀਂ ਖੋਜ ਰਹੇ ਹੋ ਉਹ ਮੌਜੂਦ ਨਹੀਂ ਹੈ ਜਾਂ ਸਥਾਨਾਂਤਰਿਤ ਕਰ ਦਿੱਤਾ ਗਿਆ ਹੈ।",
     "notFound.goBack": "ਵਾਪਸ ਜਾਓ",
     "notFound.returnHome": "ਹੋਮ ਤੇ ਵਾਪਸ ਜਾਓ",
+
+    // ML Model Status
+    "mlModel.title": "ਐਮਐਲ ਮਾਡਲ ਸਥਿਤੀ",
+    "mlModel.description": "ਮਸ਼ੀਨ ਲਰਨਿੰਗ ਭਵਿੱਖਬਾਣੀ ਮਾਡਲ ਦੀ ਰੀਅਲ-ਟਾਈਮ ਸਥਿਤੀ",
+    "mlModel.connected": "ਜੁੜਿਆ ਹੋਇਆ",
+    "mlModel.disconnected": "ਡਿਸਕਨੈਕਟ",
+    "mlModel.refresh": "ਰਿਫਰੈਸ਼ ਕਰੋ",
+    "mlModel.supportedCropTypes": "ਸਮਰਥਿਤ ਫਸਲ ਕਿਸਮਾਂ",
+    "mlModel.supportedSoilTypes": "ਸਮਰਥਿਤ ਮਿੱਟੀ ਕਿਸਮਾਂ",
+    "mlModel.types": "ਕਿਸਮਾਂ",
+    "mlModel.modelType": "ਮਾਡਲ ਕਿਸਮ",
+    "mlModel.totalFeatures": "ਕੁੱਲ ਫੀਚਰ",
+    "mlModel.targets": "ਲਕਸ਼",
+    "mlModel.labelEncoders": "ਲੇਬਲ ਐਨਕੋਡਰ",
+    "mlModel.unknown": "ਅਣਜਾਣ",
+    "mlModel.usingFallback": "ਫਾਲਬੈਕ ਭਵਿੱਖਬਾਣੀਆਂ ਦੀ ਵਰਤੋਂ",
+    "mlModel.fallbackDescription": "ਐਮਐਲ ਮਾਡਲ ਉਪਲਬਧ ਨਹੀਂ ਹੈ। ਭਵਿੱਖਬਾਣੀਆਂ ਘੱਟ ਸ਼ੁੱਧਤਾ ਦੇ ਨਾਲ ਨਿਯਮ-ਆਧਾਰਿਤ ਐਲਗੋਰਿਦਮ ਦੀ ਵਰਤੋਂ ਕਰ ਰਹੀਆਂ ਹਨ।",
+    "mlModel.lastChecked": "ਆਖਰੀ ਜਾਂਚ",
+
+    // Crop Types
+    "crops.tea": "ਚਾਹ",
+    "crops.cotton": "ਕਪਾਹ",
+    "crops.maize": "ਮੱਕੀ",
+    "crops.groundnut": "ਮੂੰਗਫਲੀ",
+    "crops.pulses": "ਦਾਲਾਂ",
+    "crops.millets": "ਬਾਜਰਾ",
+    "crops.rice": "ਚੌਲ",
+    "crops.soybean": "ਸੋਇਆਬੀਨ",
+    "crops.sugarcane": "ਗੰਨਾ",
+    "crops.wheat": "ਕਣਕ",
+    "crops.coffee": "ਕੌਫੀ",
+
+    // Soil Types
+    "soils.sandy": "ਰੇਤਲੀ",
+    "soils.silty": "ਗਾਦ",
+    "soils.laterite": "ਲੈਟਰਾਇਟ",
+    "soils.alkaline": "ਖਾਰੀ",
+    "soils.black": "ਕਾਲੀ",
+    "soils.clayey": "ਚਿਕਨੀ",
+    "soils.saline": "ਲੂਣੀ",
+    "soils.loamy": "ਦੋਮਟ",
+    "soils.red": "ਲਾਲ",
+    "soils.peaty": "ਪੀਟ",
+
+    // Soil Analysis Status
+    "soilStatus.acidic": "ਐਸਿਡਿਕ",
+    "soilStatus.alkaline": "ਖਾਰੀ",
+    "soilStatus.optimal": "ਵਧੀਆ",
+    "soilStatus.low": "ਘੱਟ",
+    "soilStatus.high": "ਵੱਧ",
+
+    // Nutrients
+    "nutrients.nitrogen": "ਨਾਈਟ੍ਰੋਜਨ",
+    "nutrients.phosphorus": "ਫਾਸਫੋਰਸ",
+    "nutrients.potassium": "ਪੋਟਾਸ਼ੀਅਮ",
+
+    // Fertilizer Application
+    "fertilizer.standardApplication": "ਮਿਆਰੀ ਖੇਤੀਬਾੜੀ ਪ੍ਰਥਾਵਾਂ ਦੇ ਅਨੁਸਾਰ ਲਾਗੂ ਕਰੋ",
+    "fertilizer.phosphorusDeficiency": "ਮਿੱਟੀ ਵਿਸ਼ਲੇਸ਼ਣ ਵਿੱਚ ਪਛਾਣੀ ਗਈ ਫਾਸਫੋਰਸ ਦੀ ਕਮੀ ਨੂੰ ਦੂਰ ਕਰਦਾ ਹੈ",
+    "fertilizer.basalDose": "ਮਿੱਟੀ ਤਿਆਰੀ ਦੌਰਾਨ ਬੇਸਲ ਖੁਰਾਕ ਦੇ ਰੂਪ ਵਿੱਚ ਲਾਗੂ ਕਰੋ",
+    "fertilizer.potassiumDeficiency": "ਬਿਹਤਰ ਫਲ ਗੁਣਵੱਤਾ ਲਈ ਪੋਟਾਸ਼ੀਅਮ ਦੀ ਕਮੀ ਨੂੰ ਦੂਰ ਕਰਦਾ ਹੈ",
+    "fertilizer.fruitDevelopment": "ਫਲ ਵਿਕਾਸ ਪੜਾਅ ਦੌਰਾਨ ਲਾਗੂ ਕਰੋ",
+    "fertilizer.organicCompost": "ਜੈਵਿਕ ਖਾਦ",
+    "fertilizer.improvesStructure": "ਮਿੱਟੀ ਦੀ ਬਣਤਰ ਵਿੱਚ ਸੁਧਾਰ ਕਰਦਾ ਹੈ ਅਤੇ ਹੌਲੀ ਰਿਲੀਜ਼ ਪੋਸ਼ਕ ਤੱਤ ਪ੍ਰਦਾਨ ਕਰਦਾ ਹੈ",
+    "fertilizer.incorporateSoil": "ਰੋਪਣ ਤੋਂ 2-3 ਹਫਤੇ ਪਹਿਲਾਂ ਲਾਗੂ ਕਰੋ ਅਤੇ ਮਿੱਟੀ ਵਿੱਚ ਮਿਲਾਓ",
+    "fertilizer.potassiumSulfate": "ਪੋਟਾਸ਼ੀਅਮ ਸਲਫੇਟ",
+    "fertilizer.dap": "ਡੀਏਪੀ",
+
+    // Farm
+    "farm.unknownFarm": "ਅਣਜਾਣ ਖੇਤ",
+
+    // Integration Tests
+    "integration.backendHealth": "ਬੈਕਐਂਡ ਸਿਹਤ ਜਾਂਚ",
+    "integration.mlModelStatus": "ਐਮਐਲ ਮਾਡਲ ਸਥਿਤੀ",
+    "integration.basicPrediction": "ਬੁਨਿਆਦੀ ਭਵਿੱਖਬਾਣੀ ਟੈਸਟ",
+    "integration.enhancedPrediction": "ਵਿਕਸਿਤ ਭਵਿੱਖਬਾਣੀ ਟੈਸਟ",
+    "integration.llmEnhanced": "ਐਲਐਲਐਮ ਵਿਕਸਿਤ ਟੈਸਟ",
+    "integration.locationServices": "ਸਥਾਨ ਸੇਵਾ ਟੈਸਟ",
+    "integration.soilData": "ਮਿੱਟੀ ਡੇਟਾ ਇੰਟੀਗ੍ਰੇਸ਼ਨ",
+    "integration.checkingBackend": "ਜਾਂਚ ਕਰ ਰਹੇ ਹਨ ਕਿ ਬੈਕਐਂਡ ਪਹੁੰਚਯੋਗ ਹੈ...",
+    "integration.verifyingML": "ਐਮਐਲ ਮਾਡਲ ਉਪਲਬਧਤਾ ਤਸਦੀਕ ਕਰ ਰਹੇ ਹਨ...",
+    "integration.testingBasic": "ਬੁਨਿਆਦੀ ਖਾਦ ਭਵਿੱਖਬਾਣੀ ਦਾ ਟੈਸਟ...",
+    "integration.testingEnhanced": "ਸਾਰੇ ਆਉਟਪੁੱਟਾਂ ਦੇ ਨਾਲ ਵਿਕਸਿਤ ਭਵਿੱਖਬਾਣੀ ਦਾ ਟੈਸਟ...",
+    "integration.testingLLM": "ਐਲਐਲਐਮ-ਵਿਕਸਿਤ ਸਿਫਾਰਸ਼ਾਂ ਦਾ ਟੈਸਟ...",
+    "integration.testingLocation": "ਸਥਾਨ-ਆਧਾਰਿਤ ਵਿਸ਼ੇਸ਼ਤਾਵਾਂ ਦਾ ਟੈਸਟ...",
+    "integration.testingSoilData": "ਮਿੱਟੀ ਡੇਟਾ ਇੰਟੀਗ੍ਰੇਸ਼ਨ ਦਾ ਟੈਸਟ...",
+
+    // Signup Form
+    "signup.productId": "ਉਤਪਾਦ ਆਈਡੀ",
+    "signup.enterProductId": "ਆਪਣਾ ਉਤਪਾਦ ਆਈਡੀ ਦਰਜ ਕਰੋ",
+    "signup.enterFullName": "ਆਪਣਾ ਪੂਰਾ ਨਾਮ ਦਰਜ ਕਰੋ",
+    "signup.enterEmail": "farmer@example.com",
+    "signup.createPassword": "ਪਾਸਵਰਡ ਬਣਾਓ",
+    "signup.confirmPassword": "ਆਪਣਾ ਪਾਸਵਰਡ ਪੁਸ਼ਟੀ ਕਰੋ",
+
+    // Footer
+    "footer.backendStatus": "ਬੈਕਐਂਡ ਇੰਟੀਗ੍ਰੇਸ਼ਨ ਸਥਿਤੀ",
   },
 };
 

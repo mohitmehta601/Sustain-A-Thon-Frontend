@@ -139,14 +139,14 @@ const Signup = () => {
                   htmlFor="productId"
                   className="text-xs xs:text-sm sm:text-base font-medium"
                 >
-                  Product ID
+                  {t("signup.productId")}
                 </Label>
                 <div className="flex items-center space-x-2 mt-1">
                   <Input
                     id="productId"
                     name="productId"
                     type="text"
-                    placeholder="Enter your product ID"
+                    placeholder={t("signup.enterProductId")}
                     value={formData.productId}
                     onChange={handleChange}
                     required
@@ -168,7 +168,7 @@ const Signup = () => {
                   id="name"
                   name="name"
                   type="text"
-                  placeholder="Enter your full name"
+                  placeholder={t("signup.enterFullName")}
                   value={formData.name}
                   onChange={handleChange}
                   required
@@ -186,7 +186,7 @@ const Signup = () => {
                   id="email"
                   name="email"
                   type="email"
-                  placeholder="farmer@example.com"
+                  placeholder={t("signup.enterEmail")}
                   value={formData.email}
                   onChange={handleChange}
                   required
@@ -205,7 +205,7 @@ const Signup = () => {
                   id="password"
                   name="password"
                   type="password"
-                  placeholder="Create a password"
+                  placeholder={t("signup.createPassword")}
                   value={formData.password}
                   onChange={handleChange}
                   required
@@ -223,7 +223,7 @@ const Signup = () => {
                   id="confirmPassword"
                   name="confirmPassword"
                   type="password"
-                  placeholder="Confirm your password"
+                  placeholder={t("signup.confirmPassword")}
                   value={formData.confirmPassword}
                   onChange={handleChange}
                   required

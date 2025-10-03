@@ -92,7 +92,7 @@ const Recommendations = () => {
   const shouldUseDetailedView = useDetailedView || false;
   const displayFormData = llmEnhancedData || formData;
   const farmName =
-    llmEnhancedData?.farm?.name || formData?.fieldName || "Unknown Farm";
+    llmEnhancedData?.farm?.name || formData?.fieldName || t("farm.unknownFarm");
 
   // If detailed view is requested, use the detailed component
   if (shouldUseDetailedView && recommendations && displayFormData) {
