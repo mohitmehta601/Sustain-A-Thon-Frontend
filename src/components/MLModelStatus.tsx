@@ -27,32 +27,32 @@ const MLModelStatus = () => {
   const [lastChecked, setLastChecked] = useState<Date | null>(null);
   const { toast } = useToast();
 
-  // Define all 11 crop types
+  // Define all 11 crop types - all using consistent green theme
   const cropTypes = [
     { name: "Tea", color: "bg-green-100 text-green-800" },
-    { name: "Cotton", color: "bg-blue-100 text-blue-800" },
-    { name: "Maize", color: "bg-yellow-100 text-yellow-800" },
-    { name: "Groundnut", color: "bg-orange-100 text-orange-800" },
-    { name: "Pulses", color: "bg-purple-100 text-purple-800" },
-    { name: "Millets", color: "bg-amber-100 text-amber-800" },
-    { name: "Rice", color: "bg-gray-100 text-gray-800" },
-    { name: "Soybean", color: "bg-lime-100 text-lime-800" },
-    { name: "Sugarcane", color: "bg-emerald-100 text-emerald-800" },
-    { name: "Wheat", color: "bg-yellow-100 text-yellow-800" },
-    { name: "Coffee", color: "bg-amber-100 text-amber-800" },
+    { name: "Cotton", color: "bg-green-100 text-green-800" },
+    { name: "Maize", color: "bg-green-100 text-green-800" },
+    { name: "Groundnut", color: "bg-green-100 text-green-800" },
+    { name: "Pulses", color: "bg-green-100 text-green-800" },
+    { name: "Millets", color: "bg-green-100 text-green-800" },
+    { name: "Rice", color: "bg-green-100 text-green-800" },
+    { name: "Soybean", color: "bg-green-100 text-green-800" },
+    { name: "Sugarcane", color: "bg-green-100 text-green-800" },
+    { name: "Wheat", color: "bg-green-100 text-green-800" },
+    { name: "Coffee", color: "bg-green-100 text-green-800" },
   ];
 
-  // Define all 10 soil types
+  // Define all 10 soil types - all using consistent green theme
   const soilTypes = [
-    { name: "Sandy", color: "bg-yellow-100 text-yellow-800" },
-    { name: "Silty", color: "bg-gray-100 text-gray-800" },
-    { name: "Laterite", color: "bg-red-100 text-red-800" },
-    { name: "Alkaline", color: "bg-blue-100 text-blue-800" },
-    { name: "Black", color: "bg-slate-100 text-slate-800" },
-    { name: "Clayey", color: "bg-orange-100 text-orange-800" },
-    { name: "Saline", color: "bg-cyan-100 text-cyan-800" },
-    { name: "Loamy", color: "bg-amber-100 text-amber-800" },
-    { name: "Red", color: "bg-red-100 text-red-800" },
+    { name: "Sandy", color: "bg-green-100 text-green-800" },
+    { name: "Silty", color: "bg-green-100 text-green-800" },
+    { name: "Laterite", color: "bg-green-100 text-green-800" },
+    { name: "Alkaline", color: "bg-green-100 text-green-800" },
+    { name: "Black", color: "bg-green-100 text-green-800" },
+    { name: "Clayey", color: "bg-green-100 text-green-800" },
+    { name: "Saline", color: "bg-green-100 text-green-800" },
+    { name: "Loamy", color: "bg-green-100 text-green-800" },
+    { name: "Red", color: "bg-green-100 text-green-800" },
     { name: "Peaty", color: "bg-green-100 text-green-800" },
   ];
 
@@ -139,92 +139,105 @@ const MLModelStatus = () => {
             </Button>
           </div>
 
-          {/* Supported Crop Types */}
-          <div className="space-y-2">
-            <div className="flex items-center space-x-2">
-              <Wheat className="h-4 w-4 text-green-600" />
-              <span className="font-medium text-sm">Supported Crop Types</span>
-              <Badge
-                variant="secondary"
-                className="bg-green-100 text-green-800 text-xs"
-              >
-                {cropTypes.length} Types
-              </Badge>
-            </div>
-            <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-1">
-              {cropTypes.map((crop, index) => (
-                <div
-                  key={crop.name}
-                  className={`flex items-center justify-center px-2 py-1 rounded border transition-all duration-200 hover:scale-105 ${crop.color}`}
-                  style={{ animationDelay: `${index * 50}ms` }}
-                >
-                  <span className="text-xs font-medium">{crop.name}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Supported Soil Types */}
-          <div className="space-y-2">
-            <div className="flex items-center space-x-2">
-              <Mountain className="h-4 w-4 text-orange-600" />
-              <span className="font-medium text-sm">Supported Soil Types</span>
-              <Badge
-                variant="secondary"
-                className="bg-orange-100 text-orange-800 text-xs"
-              >
-                {soilTypes.length} Types
-              </Badge>
-            </div>
-            <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 gap-1">
-              {soilTypes.map((soil, index) => (
-                <div
-                  key={soil.name}
-                  className={`flex items-center justify-center px-2 py-1 rounded border transition-all duration-200 hover:scale-105 ${soil.color}`}
-                  style={{ animationDelay: `${index * 50}ms` }}
-                >
-                  <span className="text-xs font-medium">{soil.name}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Model Information */}
-          {modelInfo && (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {/* Show detailed information only when ML model is connected */}
+          {isConnected && (
+            <>
+              {/* Supported Crop Types */}
               <div className="space-y-2">
-                <div className="flex justify-between">
-                  <span className="text-sm text-gray-600">Model Type:</span>
-                  <Badge variant="secondary">
-                    {modelInfo.model_type || "Unknown"}
-                  </Badge>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-sm text-gray-600">Total Features:</span>
+                <div className="flex items-center space-x-2">
+                  <Wheat className="h-3 w-3 text-green-600" />
+                  <span className="font-medium text-sm">
+                    Supported Crop Types
+                  </span>
                   <Badge
                     variant="secondary"
-                    className="bg-blue-100 text-blue-800"
+                    className="bg-red-500 text-white text-xs"
                   >
-                    {modelInfo.features?.length || 0}
+                    {cropTypes.length} Types
                   </Badge>
+                </div>
+                <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-1">
+                  {cropTypes.map((crop, index) => (
+                    <div
+                      key={crop.name}
+                      className={`flex items-center justify-center px-2 py-1 rounded border transition-all duration-200 hover:scale-105 ${crop.color}`}
+                      style={{ animationDelay: `${index * 50}ms` }}
+                    >
+                      <span className="text-xs font-medium">{crop.name}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
 
+              {/* Supported Soil Types */}
               <div className="space-y-2">
-                <div className="flex justify-between">
-                  <span className="text-sm text-gray-600">Targets:</span>
-                  <span className="text-sm font-medium">
-                    {modelInfo.targets?.length || 0}
+                <div className="flex items-center space-x-2">
+                  <Mountain className="h-3 w-3 text-green-600" />
+                  <span className="font-medium text-sm">
+                    Supported Soil Types
                   </span>
+                  <Badge
+                    variant="secondary"
+                    className="bg-red-500 text-white text-xs"
+                  >
+                    {soilTypes.length} Types
+                  </Badge>
                 </div>
-                <div className="flex justify-between">
-                  <span className="text-sm text-gray-600">Label Encoders:</span>
-                  <span className="text-sm font-medium">
-                    {Object.keys(modelInfo.label_encoders || {}).length}
-                  </span>
+                <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 gap-1">
+                  {soilTypes.map((soil, index) => (
+                    <div
+                      key={soil.name}
+                      className={`flex items-center justify-center px-2 py-1 rounded border transition-all duration-200 hover:scale-105 ${soil.color}`}
+                      style={{ animationDelay: `${index * 50}ms` }}
+                    >
+                      <span className="text-xs font-medium">{soil.name}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
-            </div>
+
+              {/* Model Information */}
+              {modelInfo && (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <div className="flex justify-between">
+                      <span className="text-sm text-gray-600">Model Type:</span>
+                      <Badge variant="secondary">
+                        {modelInfo.model_type || "Unknown"}
+                      </Badge>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-sm text-gray-600">
+                        Total Features:
+                      </span>
+                      <Badge
+                        variant="secondary"
+                        className="bg-blue-100 text-blue-800"
+                      >
+                        {modelInfo.features?.length || 0}
+                      </Badge>
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <div className="flex justify-between">
+                      <span className="text-sm text-gray-600">Targets:</span>
+                      <span className="text-sm font-medium">
+                        {modelInfo.targets?.length || 0}
+                      </span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-sm text-gray-600">
+                        Label Encoders:
+                      </span>
+                      <span className="text-sm font-medium">
+                        {Object.keys(modelInfo.label_encoders || {}).length}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </>
           )}
 
           {/* Fallback Warning */}
